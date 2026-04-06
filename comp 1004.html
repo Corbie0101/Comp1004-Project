@@ -1,21 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-<meta charset="UTF-8">
-<title>Page Title</title>
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="stylesheet" href="project 4.css">
-<style>
-</style>
-<script src=""></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniHub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="project 4.css">
+</head>
 <body>
 
-<img src="img_la.jpg" alt="LA" style="width:100%">
+    <header>
+        <h1>UniHub</h1>
+        <nav class="hotbar">
+            <button class="nav-btn" data-target="home">
+                <i class="fa-solid fa-house"></i>
+                <span>Home</span>
+            </button>
 
-<div class="">
- <h1>This is a Heading</h1>
- <p>This is a paragraph.</p>
- <p>This is another paragraph.</p>
-</div>
+            <button class="nav-btn" data-target="timetable">
+                <i class="fa-solid fa-calendar"></i>
+                <span>Timetables</span>
+            </button>
 
+            <button class="nav-btn" data-target="assignments">
+                <i class="fa-solid fa-book"></i>
+                <span>Assignments</span>
+            </button>
+        </nav>
+
+    </header>
+
+    <main>
+        <!-- HOME SECTION -->
+        <section id="home" class="page active">
+            <h2>Welcome to UniHub</h2>
+            <p>Your central hub for timetables and assignment management.</p>
+        </section>
+
+        <!-- TIMETABLE SECTION -->
+        <section id="timetable" class="page">
+            <h2>Your Timetable</h2>
+            <div id="timetable-container"></div>
+        </section>
+
+        <!-- ASSIGNMENTS SECTION -->
+        <section id="assignments" class="page">
+            <h2>Assignments</h2>
+
+            <form id="assignment-form">
+                <input type="text" id="assignment-title" placeholder="Assignment title" required>
+                <input type="date" id="assignment-date" required>
+                <button type="submit">Add Assignment</button>
+            </form>
+
+            <ul id="assignment-list"></ul>
+        </section>
+    </main>
+
+    <script src="comp 1004.js"></script>
 </body>
 </html>
