@@ -4,14 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UniHub</title>
+
+    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Styles -->
     <link rel="stylesheet" href="project 4.css">
 </head>
+
 <body>
 
+    <!-- HEADER -->
     <header>
         <h1>UniHub</h1>
-        <nav class="hotbar">
+
+        <nav class="hotbar" aria-label="Main navigation">
             <button class="nav-btn" data-target="home">
                 <i class="fa-solid fa-house"></i>
                 <span>Home</span>
@@ -27,36 +34,53 @@
                 <span>Assignments</span>
             </button>
         </nav>
-
     </header>
 
-    <main>
-        <!-- HOME SECTION -->
-        <section id="home" class="page active">
-            <h2>Welcome to UniHub</h2>
-            <p>Your central hub for timetables and assignment management.</p>
-        </section>
+    <!-- MAIN CONTENT -->
+   <main>
 
-        <!-- TIMETABLE SECTION -->
-        <section id="timetable" class="page">
-            <h2>Your Timetable</h2>
-            <div id="timetable-container"></div>
-        </section>
+    <!-- HOME SECTION -->
+    <section id="home" class="page active">
+        <h2 class="title">Welcome to UniHub</h2>
+        <p class="motivation">Your central hub for timetables and assignment management.</p>
 
-        <!-- ASSIGNMENTS SECTION -->
-        <section id="assignments" class="page">
-            <h2>Assignments</h2>
+        <!-- Today's Timetable Preview -->
+        <div class="home-card">
+            <h3>Today's Timetable</h3>
+            <div id="home-timetable"></div>
+        </div>
 
-            <form id="assignment-form">
-                <input type="text" id="assignment-title" placeholder="Assignment title" required>
-                <input type="date" id="assignment-date" required>
-                <button type="submit">Add Assignment</button>
-            </form>
+        <!-- Upcoming Assignments -->
+        <div class="home-card">
+            <h3>Upcoming Assignments (Next 3 Weeks)</h3>
+            <ul id="upcoming-assignments"></ul>
+        </div>
+    </section>
 
-            <ul id="assignment-list"></ul>
-        </section>
+    <!-- TIMETABLE SECTION -->
+    <section id="timetable" class="page">
+        <h2 class="title">Your Timetable</h2>
+        <div id="timetable-container"></div>
+    </section>
+
+    <!-- ASSIGNMENTS SECTION -->
+    <section id="assignments" class="page">
+        <h2 class="title">Assignments</h2>
+
+        <form id="assignment-form" class="assignment-form">
+            <input type="text" id="assignment-title" placeholder="Assignment title" required>
+            <input type="date" id="assignment-date" required>
+            <button type="submit">Add Assignment</button>
+        </form>
+
+        <ul id="assignment-list" class="assignment-list"></ul>
+    </section>
+
     </main>
 
+
+    <!-- SCRIPTS -->
     <script src="comp 1004.js"></script>
+
 </body>
 </html>

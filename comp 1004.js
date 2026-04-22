@@ -47,3 +47,29 @@ timetableData.forEach(item => {
     div.textContent = `${item.day}: ${item.module} at ${item.time}`;
     timetableContainer.appendChild(div);
 });
+
+
+// HOME PAGE TIMETABLE PREVIEW
+const homeTimetable = document.getElementById("home-timetable");
+
+function loadTodayTimetable() {
+    const todayName = new Date().toLocaleDateString("en-GB", { weekday: "long" });
+
+    const todayClasses = timetableData.filter(item => item.day === todayName);
+
+    homeTimetable.innerHTML = ""; // clear old content
+
+    if (todayClasses.length === 0) {
+        homeTimetable.textContent = "No classes today.";
+        return;
+    }
+
+    todayClasses.forEach(item => {
+        const div = document.createElement("div");
+        div.classList.add("timetable-item");
+        div.textContent = `${item.module} at ${item.time}`;
+        homeTimetable.appendChild(div);
+    });
+}
+
+loadTodayTimetable();
